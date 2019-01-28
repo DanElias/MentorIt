@@ -1,0 +1,512 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+
+    <title>Mentor It // Dashboard</title>
+    <link rel="shortcut icon" href="Mentorit%20logo.png">
+    
+    <!-- global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-icon-style.css">
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+
+    <!-- Core stylesheets -->
+    <link rel="stylesheet" href="css/ui-elements/card.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body> 
+
+<!--====================================================
+                         MAIN NAVBAR
+======================================================-->        
+    <header class="header">
+        <nav class="navbar navbar-expand-lg ">
+            <div class="search-box">
+                <button class="dismiss"><i class="icon-close"></i></button>
+                <form id="searchForm" action="#" role="search">
+                    <input type="search" placeholder="Search Now" class="form-control">
+                </form>
+            </div>
+            <div class="container-fluid ">
+                <div class="navbar-holder d-flex align-items-center justify-content-between">
+                    <div class="navbar-header">
+                        <a href="index.html" class="navbar-brand">
+                            <div class="brand-text brand-big hidden-lg-down"><img src="Mentorit%20logo%20text.png" style=height:60px alt="Logo" class="img-fluid"></div>
+                            <div class="brand-text brand-small"><img src="Mentorit%20logo.png"style=width:60px alt="Logo" class="img-fluid"></div>
+                        </a>
+                        <a id="toggle-btn" href="#" class="menu-btn active">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </a>
+                    </div>
+                </div>
+                <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                    <!-- Expand-->
+                    <li class="nav-item d-flex align-items-center full_scr_exp"><a class="nav-link" href="#"><img src="img/expand.png" onclick="toggleFullScreen(document.body)" class="img-fluid" alt=""></a></li>
+                    <!-- Search-->
+                    <li class="nav-item d-flex align-items-center"><a id="search" class="nav-link" href="#"><i class="icon-search"></i></a></li>
+                    <!-- Notifications-->
+                    <li class="nav-item dropdown"> 
+                        <a id="notifications" class="nav-link" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell-o"></i><span class="noti-numb-bg"></span><span class="badge">2</span></a>
+                        <ul aria-labelledby="notifications" class="dropdown-menu">
+                            
+                            
+                            <li>
+                                <a rel="nofollow" href="#" class="dropdown-item nav-link">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-user-circle" aria-hidden="true"></i>You have 2 sessions today</div>
+                                        <div class="notification-time"><small>4 minutes ago</small></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a rel="nofollow" href="#" class="dropdown-item nav-link">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-user-circle" aria-hidden="true"></i>New mentee request</div>
+                                        <div class="notification-time"><small>4 minutes ago</small></div>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                        
+                            <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>view all notifications                                            </strong></a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item dropdown"><a id="profile" class="nav-link logout" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="img/default-user.png" alt="..." class="img-fluid rounded-circle" style="height: 30px; width: 30px;"></a>
+                        <ul aria-labelledby="profile" class="dropdown-menu profile">
+                            <li>
+                                <a rel="nofollow" href="#" class="dropdown-item d-flex">
+                                    <div class="msg-profile"> <img src="img/default-user.png" alt="..." class="img-fluid rounded-circle"></div>
+                                    <div class="msg-body">
+                                        <h3 class="h5">//Username//</h3><span>//mail//@itesm.mx</span>
+                                    </div>
+                                </a>
+                                <hr>
+                            </li>
+                            <li>
+                                <a rel="nofollow" href="profile.html" class="dropdown-item">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-user "></i>My Profile</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a rel="nofollow" href="profile.html" class="dropdown-item">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-envelope-o"></i>Inbox</div> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a rel="nofollow" href="profile.html" class="dropdown-item">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-cog"></i>Setting</div>
+                                    </div>
+                                </a>
+                                <hr>
+                            </li>
+                            <li>
+                                <a rel="nofollow" href="profile.html" class="dropdown-item">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-power-off"></i>Logout</div>
+                                    </div>
+                                </a> 
+                            </li>
+                        </ul>
+                    </li>
+                    
+                   
+                </ul> 
+            </div>
+        </nav>
+    </header>
+
+<!--====================================================
+                        PAGE CONTENT
+======================================================-->
+    <div class="page-content d-flex align-items-stretch">
+
+        <!--***** SIDE NAVBAR *****-->
+        <nav class="side-navbar">
+            <div class="sidebar-header d-flex align-items-center">
+                <div class="avatar"><img src="img/default-user.png" alt="..." class="img-fluid rounded-circle"></div>
+                <div class="title">
+                    <h1 class="h4">//Username//</h1>
+                </div>
+            </div>
+            <hr>
+            <!-- Sidebar Navidation Menus-->
+            <ul class="list-unstyled">
+                <li class="active"> <a href="index2.html"><i class="icon-home"></i>My Dashboard</a></li>
+                
+                
+                
+                <li><a href="#forms" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-graduation-cap" aria-hidden="true"></i>Find Mentors</a>
+                    <ul id="forms" class="collapse list-unstyled">
+                        <li><a href="search-mentors.html">Search a Mentor</a></li> 
+                        <li><a href="mentor-results.html">Browse Mentors</a></li> 
+                    </ul>
+                </li>
+                <li><a href="#apps" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Apps </a>
+                    <ul id="apps" class="collapse list-unstyled">
+                        <li><a href="calendar.html">Calendar</a></li> 
+                        <li><a href="email.html">Email</a></li> 
+                    </ul>
+                </li>
+                <li> <a href="maps.html"> <i class="fa fa-map-o"></i>Maps </a></li>
+               
+                
+                
+        </nav>
+            
+        <div class="content-inner">
+           
+            
+           <!--***** MENTORS RESULTS FIRST ROW *****--> 
+            <div class="row" id="report4">
+                <!--***** MENTOR CARD RESULT *****--> 
+                <div class="col-md-4" id="card-2" data-wow-delay="0.1s" style="border: 0px; margin 0px; ">
+                    <div class="card hovercard" style="border: 0px; margin: 0px">
+                            <div class="story-descb" style="background-color: white;border: 0px; margin: 5px; box-shadow: blue">
+                            <div class="cardheader" style="z-index: 0; color: white;border: 0px; margin: 1px" ></div>
+                            <div class="avatar">
+                                <img alt="" src="img/default-user.png" class="img-fluid">
+                            </div>
+                            <div class="info">
+                                <div class="title">
+                                    <a target="_blank" href="#">Etan Imanol</a>
+                                </div>
+                                <div style="color: gray">19 years old - ISC - 2nd Semester</div>
+                                <div style="background-color: #4668d6; color: white">Mentoring:</div>
+                                <div style="color: gray">Calculus II, Maths, Physics</div>
+                                <div style="background-color: #27e8ae; color: white">Availability:</div>
+                                <div style="color: gray">Tues-Wed-Thurs 16:00-20:00</div>
+                                <div style="background-color: #ea005d; color: white">Learning Style:</div>
+                                <div style="color: gray">Logical-Mathematical</div>
+                                <div style="background-color: #ffdd1e; color: white">Rating & Pricing</div>
+                                <div style="color: #ffdd1e">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <a style="color: gray"> - Free</a>
+                                </div>
+                                
+                                <a href="register-session.html"><i class="fa fa-arrow-circle-o-right"></i>Register a Session!</a>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+                 <!--***** MENTOR CARD RESULT *****--> 
+                <div class="col-md-4" id="card-2" data-wow-delay="0.1s" style="border: 0px; margin 0px; ">
+                    <div class="card hovercard" style="border: 0px; margin: 0px">
+                            <div class="story-descb" style="background-color: white;border: 0px; margin: 5px; box-shadow: blue">
+                            <div class="cardheader" style="z-index: 0; color: white;border: 0px; margin: 1px" ></div>
+                            <div class="avatar">
+                                <img alt="" src="img/default-user.png" class="img-fluid">
+                            </div>
+                            <div class="info">
+                                <div class="title">
+                                    <a target="_blank" href="#">Ulises Almaguer</a>
+                                </div>
+                                <div style="color: gray">19 years old - ISC - 2nd Semester</div>
+                                <div style="background-color: #4668d6; color: white">Mentoring:</div>
+                                <div style="color: gray">Calculus, Maths</div>
+                                <div style="background-color: #27e8ae; color: white">Availability:</div>
+                                <div style="color: gray">Mon-Fri 10:00-12:00</div>
+                                <div style="background-color: #ea005d; color: white">Learning Style:</div>
+                                <div style="color: gray">Logical-Mathematical</div>
+                                <div style="background-color: #ffdd1e; color: white">Rating & Pricing</div>
+                                <div style="color: #ffdd1e">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i> 
+                                    <a style="color: gray"> - $20.00</a>
+                                </div>
+                                
+                                <a href="register-session.html"><i class="fa fa-arrow-circle-o-right"></i>Register a Session!</a>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+                 <!--***** MENTOR CARD RESULT *****--> 
+                <div class="col-md-4" id="card-2" data-wow-delay="0.1s" style="border: 0px; margin 0px; ">
+                    <div class="card hovercard" style="border: 0px; margin: 0px">
+                            <div class="story-descb" style="background-color: white;border: 0px; margin: 5px; box-shadow: blue">
+                            <div class="cardheader" style="z-index: 0; color: white;border: 0px; margin: 1px" ></div>
+                            <div class="avatar">
+                                <img alt="" src="img/default-user.png" class="img-fluid">
+                            </div>
+                            <div class="info">
+                                <div class="title">
+                                    <a target="_blank" href="#">Adolfo Gramlich</a>
+                                </div>
+                                <div style="color: gray">18 years old - IMT - 1st Semester</div>
+                                <div style="background-color: #4668d6; color: white">Mentoring:</div>
+                                <div style="color: gray">Maths, Physics, Music Production</div>
+                                <div style="background-color: #27e8ae; color: white">Availability:</div>
+                                <div style="color: gray">Tues-Wed-Thurs 8:30:00-10:00</div>
+                                <div style="background-color: #ea005d; color: white">Learning Style:</div>
+                                <div style="color: gray">Logical-Mathematical, Musical</div>
+                                <div style="background-color: #ffdd1e; color: white">Rating & Pricing</div>
+                                <div style="color: #ffdd1e">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i> 
+                                    <a style="color: gray"> - Free</a>
+                                </div>
+                                
+                                <a href="register-session.html"><i class="fa fa-arrow-circle-o-right"></i>Register a Session!</a>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+             </div>  
+            
+            <br>
+            
+            <!--***** MENTORS RESULTS SECOND ROW *****--> 
+            <div class="row" id="report4">
+                <!--***** MENTOR CARD RESULT *****--> 
+                <div class="col-md-4" id="card-2" data-wow-delay="0.1s" style="border: 0px; margin 0px; ">
+                    <div class="card hovercard" style="border: 0px; margin: 0px">
+                            <div class="story-descb" style="background-color: white;border: 0px; margin: 5px; box-shadow: blue">
+                            <div class="cardheader" style="z-index: 0; color: white;border: 0px; margin: 1px" ></div>
+                            <div class="avatar">
+                                <img alt="" src="img/default-user.png" class="img-fluid">
+                            </div>
+                            <div class="info">
+                                <div class="title">
+                                    <a target="_blank" href="#">Etan Imanol</a>
+                                </div>
+                                <div style="color: gray">19 years old - ISC - 2nd Semester</div>
+                                <div style="background-color: #4668d6; color: white">Mentoring:</div>
+                                <div style="color: gray">Calculus II, Maths, Physics</div>
+                                <div style="background-color: #27e8ae; color: white">Availability:</div>
+                                <div style="color: gray">Tues-Wed-Thurs 16:00-20:00</div>
+                                <div style="background-color: #ea005d; color: white">Learning Style:</div>
+                                <div style="color: gray">Logical-Mathematical</div>
+                                <div style="background-color: #ffdd1e; color: white">Rating & Pricing</div>
+                                <div style="color: #ffdd1e">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <a style="color: gray"> - Free</a>
+                                </div>
+                                
+                                <a href="register-session.html"><i class="fa fa-arrow-circle-o-right"></i>Register a Session!</a>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+                 <!--***** MENTOR CARD RESULT *****--> 
+                <div class="col-md-4" id="card-2" data-wow-delay="0.1s" style="border: 0px; margin 0px; ">
+                    <div class="card hovercard" style="border: 0px; margin: 0px">
+                            <div class="story-descb" style="background-color: white;border: 0px; margin: 5px; box-shadow: blue">
+                            <div class="cardheader" style="z-index: 0; color: white;border: 0px; margin: 1px" ></div>
+                            <div class="avatar">
+                                <img alt="" src="img/default-user.png" class="img-fluid">
+                            </div>
+                            <div class="info">
+                                <div class="title">
+                                    <a target="_blank" href="#">Ulises Almaguer</a>
+                                </div>
+                                <div style="color: gray">19 years old - ISC - 2nd Semester</div>
+                                <div style="background-color: #4668d6; color: white">Mentoring:</div>
+                                <div style="color: gray">Calculus, Maths</div>
+                                <div style="background-color: #27e8ae; color: white">Availability:</div>
+                                <div style="color: gray">Mon-Fri 10:00-12:00</div>
+                                <div style="background-color: #ea005d; color: white">Learning Style:</div>
+                                <div style="color: gray">Logical-Mathematical</div>
+                                <div style="background-color: #ffdd1e; color: white">Rating & Pricing</div>
+                                <div style="color: #ffdd1e">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i> 
+                                    <a style="color: gray"> - $20.00</a>
+                                </div>
+                                
+                                <a href="register-session.html"><i class="fa fa-arrow-circle-o-right"></i>Register a Session!</a>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+                 <!--***** MENTOR CARD RESULT *****--> 
+                <div class="col-md-4" id="card-2" data-wow-delay="0.1s" style="border: 0px; margin 0px; ">
+                    <div class="card hovercard" style="border: 0px; margin: 0px">
+                            <div class="story-descb" style="background-color: white;border: 0px; margin: 5px; box-shadow: blue">
+                            <div class="cardheader" style="z-index: 0; color: white;border: 0px; margin: 1px" ></div>
+                            <div class="avatar">
+                                <img alt="" src="img/default-user.png" class="img-fluid">
+                            </div>
+                            <div class="info">
+                                <div class="title">
+                                    <a target="_blank" href="#">Adolfo Gramlich</a>
+                                </div>
+                                <div style="color: gray">18 years old - IMT - 1st Semester</div>
+                                <div style="background-color: #4668d6; color: white">Mentoring:</div>
+                                <div style="color: gray">Maths, Physics, Music Production</div>
+                                <div style="background-color: #27e8ae; color: white">Availability:</div>
+                                <div style="color: gray">Tues-Wed-Thurs 8:30:00-10:00</div>
+                                <div style="background-color: #ea005d; color: white">Learning Style:</div>
+                                <div style="color: gray">Logical-Mathematical, Musical</div>
+                                <div style="background-color: #ffdd1e; color: white">Rating & Pricing</div>
+                                <div style="color: #ffdd1e">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i> 
+                                    <a style="color: gray"> - Free</a>
+                                </div>
+                                
+                                <a href="register-session.html"><i class="fa fa-arrow-circle-o-right"></i>Register a Session!</a>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+             </div>  
+            
+            <br>
+            
+             <!--***** MENTORS RESULTS THIRD ROW *****--> 
+            <div class="row" id="report4">
+                <!--***** MENTOR CARD RESULT *****--> 
+                <div class="col-md-4" id="card-2" data-wow-delay="0.1s" style="border: 0px; margin 0px; ">
+                    <div class="card hovercard" style="border: 0px; margin: 0px">
+                            <div class="story-descb" style="background-color: white;border: 0px; margin: 5px; box-shadow: blue">
+                            <div class="cardheader" style="z-index: 0; color: white;border: 0px; margin: 1px" ></div>
+                            <div class="avatar">
+                                <img alt="" src="img/default-user.png" class="img-fluid">
+                            </div>
+                            <div class="info">
+                                <div class="title">
+                                    <a target="_blank" href="#">Etan Imanol</a>
+                                </div>
+                                <div style="color: gray">19 years old - ISC - 2nd Semester</div>
+                                <div style="background-color: #4668d6; color: white">Mentoring:</div>
+                                <div style="color: gray">Calculus II, Maths, Physics</div>
+                                <div style="background-color: #27e8ae; color: white">Availability:</div>
+                                <div style="color: gray">Tues-Wed-Thurs 16:00-20:00</div>
+                                <div style="background-color: #ea005d; color: white">Learning Style:</div>
+                                <div style="color: gray">Logical-Mathematical</div>
+                                <div style="background-color: #ffdd1e; color: white">Rating & Pricing</div>
+                                <div style="color: #ffdd1e">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <a style="color: gray"> - Free</a>
+                                </div>
+                                
+                                <a href="register-session.html"><i class="fa fa-arrow-circle-o-right"></i>Register a Session!</a>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+                 <!--***** MENTOR CARD RESULT *****--> 
+                <div class="col-md-4" id="card-2" data-wow-delay="0.1s" style="border: 0px; margin 0px; ">
+                    <div class="card hovercard" style="border: 0px; margin: 0px">
+                            <div class="story-descb" style="background-color: white;border: 0px; margin: 5px; box-shadow: blue">
+                            <div class="cardheader" style="z-index: 0; color: white;border: 0px; margin: 1px" ></div>
+                            <div class="avatar">
+                                <img alt="" src="img/default-user.png" class="img-fluid">
+                            </div>
+                            <div class="info">
+                                <div class="title">
+                                    <a target="_blank" href="#">Ulises Almaguer</a>
+                                </div>
+                                <div style="color: gray">19 years old - ISC - 2nd Semester</div>
+                                <div style="background-color: #4668d6; color: white">Mentoring:</div>
+                                <div style="color: gray">Calculus, Maths</div>
+                                <div style="background-color: #27e8ae; color: white">Availability:</div>
+                                <div style="color: gray">Mon-Fri 10:00-12:00</div>
+                                <div style="background-color: #ea005d; color: white">Learning Style:</div>
+                                <div style="color: gray">Logical-Mathematical</div>
+                                <div style="background-color: #ffdd1e; color: white">Rating & Pricing</div>
+                                <div style="color: #ffdd1e">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i> 
+                                    <a style="color: gray"> - $20.00</a>
+                                </div>
+                                
+                                <a href="register-session.html"><i class="fa fa-arrow-circle-o-right"></i>Register a Session!</a>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+                 <!--***** MENTOR CARD RESULT *****--> 
+                <div class="col-md-4" id="card-2" data-wow-delay="0.1s" style="border: 0px; margin 0px; ">
+                    <div class="card hovercard" style="border: 0px; margin: 0px">
+                            <div class="story-descb" style="background-color: white;border: 0px; margin: 5px; box-shadow: blue">
+                            <div class="cardheader" style="z-index: 0; color: white;border: 0px; margin: 1px" ></div>
+                            <div class="avatar">
+                                <img alt="" src="img/default-user.png" class="img-fluid">
+                            </div>
+                            <div class="info">
+                                <div class="title">
+                                    <a target="_blank" href="#">Adolfo Gramlich</a>
+                                </div>
+                                <div style="color: gray">18 years old - IMT - 1st Semester</div>
+                                <div style="background-color: #4668d6; color: white">Mentoring:</div>
+                                <div style="color: gray">Maths, Physics, Music Production</div>
+                                <div style="background-color: #27e8ae; color: white">Availability:</div>
+                                <div style="color: gray">Tues-Wed-Thurs 8:30:00-10:00</div>
+                                <div style="background-color: #ea005d; color: white">Learning Style:</div>
+                                <div style="color: gray">Logical-Mathematical, Musical</div>
+                                <div style="background-color: #ffdd1e; color: white">Rating & Pricing</div>
+                                <div style="color: #ffdd1e">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i> 
+                                    <a style="color: gray"> - Free</a>
+                                </div>
+                                
+                                <a href="register-session.html"><i class="fa fa-arrow-circle-o-right"></i>Register a Session!</a>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+             </div>  
+            
+            <br>
+        
+                 
+                   
+</div>
+
+    <!--Global Javascript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper/popper.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/jquery.validate.min.js"></script> 
+    <script src="js/chart.min.js"></script> 
+    <script src="js/front.js"></script> 
+    
+    <!--Core Javascript -->
+    <script src="js/mychart.js"></script>
+            
+</body>
+
+</html>

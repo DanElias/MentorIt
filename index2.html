@@ -1,0 +1,426 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+
+    <title>Mentor It // Dashboard</title>
+    <link rel="shortcut icon" href="Mentorit%20logo.png">
+    
+    <!-- global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-icon-style.css">
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+
+    <!-- Core stylesheets -->
+    <link rel="stylesheet" href="css/ui-elements/card.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body> 
+
+<!--====================================================
+                         MAIN NAVBAR
+======================================================-->        
+    <header class="header">
+        <nav class="navbar navbar-expand-lg ">
+            <div class="search-box">
+                <button class="dismiss"><i class="icon-close"></i></button>
+                <form id="searchForm" action="#" role="search">
+                    <input type="search" placeholder="Search Now" class="form-control">
+                </form>
+            </div>
+            <div class="container-fluid ">
+                <div class="navbar-holder d-flex align-items-center justify-content-between">
+                    <div class="navbar-header">
+                        <a href="index.html" class="navbar-brand">
+                            <div class="brand-text brand-big hidden-lg-down"><img src="Mentorit%20logo%20text.png" style=height:60px alt="Logo" class="img-fluid"></div>
+                            <div class="brand-text brand-small"><img src="Mentorit%20logo.png"style=width:60px alt="Logo" class="img-fluid"></div>
+                        </a>
+                        <a id="toggle-btn" href="#" class="menu-btn active">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </a>
+                    </div>
+                </div>
+                <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                    <!-- Expand-->
+                    <li class="nav-item d-flex align-items-center full_scr_exp"><a class="nav-link" href="#"><img src="img/expand.png" onclick="toggleFullScreen(document.body)" class="img-fluid" alt=""></a></li>
+                    <!-- Search-->
+                    <li class="nav-item d-flex align-items-center"><a id="search" class="nav-link" href="#"><i class="icon-search"></i></a></li>
+                    <!-- Notifications-->
+                    <li class="nav-item dropdown"> 
+                        <a id="notifications" class="nav-link" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell-o"></i><span class="noti-numb-bg"></span><span class="badge">2</span></a>
+                        <ul aria-labelledby="notifications" class="dropdown-menu">
+                            
+                            
+                            <li>
+                                <a rel="nofollow" href="#" class="dropdown-item nav-link">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-user-circle" aria-hidden="true"></i>You have 2 sessions today</div>
+                                        <div class="notification-time"><small>4 minutes ago</small></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a rel="nofollow" href="#" class="dropdown-item nav-link">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-user-circle" aria-hidden="true"></i>New mentee request</div>
+                                        <div class="notification-time"><small>4 minutes ago</small></div>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                        
+                            <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>view all notifications                                            </strong></a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item dropdown"><a id="profile" class="nav-link logout" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="img/default-user.png" alt="..." class="img-fluid rounded-circle" style="height: 30px; width: 30px;"></a>
+                        <ul aria-labelledby="profile" class="dropdown-menu profile">
+                            <li>
+                                <a rel="nofollow" href="#" class="dropdown-item d-flex">
+                                    <div class="msg-profile"> <img src="img/default-user.png" alt="..." class="img-fluid rounded-circle"></div>
+                                    <div class="msg-body">
+                                        <h3 class="h5">//Username//</h3><span>//mail//@itesm.mx</span>
+                                    </div>
+                                </a>
+                                <hr>
+                            </li>
+                            <li>
+                                <a rel="nofollow" href="profile.html" class="dropdown-item">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-user "></i>My Profile</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a rel="nofollow" href="profile.html" class="dropdown-item">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-envelope-o"></i>Inbox</div> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a rel="nofollow" href="profile.html" class="dropdown-item">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-cog"></i>Setting</div>
+                                    </div>
+                                </a>
+                                <hr>
+                            </li>
+                            <li>
+                                <a rel="nofollow" href="profile.html" class="dropdown-item">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-power-off"></i>Logout</div>
+                                    </div>
+                                </a> 
+                            </li>
+                        </ul>
+                    </li>
+                    
+                   
+                </ul> 
+            </div>
+        </nav>
+    </header>
+
+<!--====================================================
+                        PAGE CONTENT
+======================================================-->
+    <div class="page-content d-flex align-items-stretch">
+
+        <!--***** SIDE NAVBAR *****-->
+        <nav class="side-navbar">
+            <div class="sidebar-header d-flex align-items-center">
+                <div class="avatar"><img src="img/default-user.png" alt="..." class="img-fluid rounded-circle"></div>
+                <div class="title">
+                    <h1 class="h4">//Username//</h1>
+                </div>
+            </div>
+            <hr>
+            <!-- Sidebar Navidation Menus-->
+            <ul class="list-unstyled">
+                <li class="active"> <a href="index2.html"><i class="icon-home"></i>My Dashboard</a></li>
+                
+                
+                
+                <li><a href="#forms" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-graduation-cap" aria-hidden="true"></i>Find Mentors</a>
+                    <ul id="forms" class="collapse list-unstyled">
+                        <li><a href="search-mentors.html">Search a Mentor</a></li> 
+                        <li><a href="mentor-results.html">Browse Mentors</a></li> 
+                    </ul>
+                </li>
+                <li><a href="#apps" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Apps </a>
+                    <ul id="apps" class="collapse list-unstyled">
+                        <li><a href="calendar.html">Calendar</a></li> 
+                        <li><a href="email.html">Email</a></li> 
+                    </ul>
+                </li>
+                <li> <a href="maps.html"> <i class="fa fa-map-o"></i>Maps </a></li>
+               
+                
+                
+        </nav>
+            
+        <div class="content-inner">
+           
+            
+            <!--***** PROFILE CARD *****-->
+            <div class="row" id="report4">
+            <!--***** user information *****-->
+                <div class="col-md-12 mt-0" id="card-2">
+                    <div class="card hovercard">
+                        <div class="cardheader" style="z-index: 0; color: white" ></div>
+                        
+                        <div class="avatar">
+                            <img alt="" src="img/default-user.png" class="img-fluid">
+                        </div>
+                        <div class="info">
+                            <div class="title">
+                                <a target="_blank" href="#">Welcome //Username//</a>
+                            </div>
+                            <div class="desc">Hi my name is //name// - 20 years old - ISC - I like helping people!</div>
+                        </div>
+                        <div class="bottom">
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            <!--***** user statistics *****-->
+                
+                
+                <div class="col-md-3">
+                    <div class="card text-center social-bottom sb-fb">
+                        <br>
+                        <div>Received sessions: </div>
+                        <p>//#//</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center social-bottom sb-tw" style="background-color:#ffc700">
+                       <br>
+                        <div>Given Sessions:</div>
+                        <p>//#//</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center social-bottom" style="background-color: #605bb7 ">
+                       <br>
+                        <div>Rating: </div>
+                        <p>//#//</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center social-bottom" style="background-color: #ed0062">
+                       <br>
+                        <div>Learning Style:</div>
+                        <p>//STYLE//</p>
+                    </div>
+                </div>
+            </div> 
+
+            
+            <!--***** Header mentoring sessions: mentee*****-->  
+            <div class="row" id="report3.1">
+            <div class="col-md-12">
+                    <div class="card text-center social-bottom sb-fb">
+                        <div>Sessions where you participate as mentee: </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!--***** Mentoring sessions: mentee *****-->     
+            <div class="row" id="report3">
+                <div class="col-md-12">
+                    <div class="card card-c2">
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                                <th>Topic</th>
+                                <th>Date</th>
+                                <th>Hour</th> 
+                                <th>Place</th>
+                                <th>Mentor</th> 
+                                <th>Status</th> 
+                                <th></th> 
+                                <th></th>
+                                
+                                
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                                <td>//Physics II//</td>
+                                <td>//27/04/2018//</td>
+                                <td>//15:00//</td>
+                                <td>//Biblio//</td>
+                                <td>//Dan Elias//</td>
+                                <td>//Pending//</td>
+                                <td><a href="register-session.html" id="cancel" name="cancel" class="btn btn-default">Edit</a></td>
+                                <td><a href="" class="btn btn-default" id="delete">Cancel</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>//Calculus II//</td>
+                                <td>//28/04/2018//</td>
+                                <td>//18:30//</td>
+                                <td>//Ruido//</td>
+                                <td>//Etan Castro//</td>
+                                <td>//Pending//</td>
+                                <td><a href="register-session.html" id="cancel" name="cancel" class="btn btn-default">Edit</a></td>
+                                <td><a href="" class="btn btn-default" id="delete">Cancel</a></td>
+                            </tr>
+                            <tr>
+                                <td>//Object Oriented Programming//</td>
+                                <td>//01/05/2018//</td>
+                                <td>//19:30//</td>
+                                <td>//Plaza Roja//</td>
+                                <td>//Ulises Almaguer//</td>
+                                <td>//Pending//</td>
+                                <td><a href="register-session.html" id="cancel" name="cancel" class="btn btn-default">Edit</a></td>
+                                <td><a href="" class="btn btn-default" id="delete">Cancel</a></td>
+                            </tr>
+                            <tr>
+                                <td>//Chemistry I//</td>
+                                <td>//25/04/2018//</td>
+                                <td>//10:00//</td>
+                                <td>//Prepa//</td>
+                                <td>//Laura Collins//</td>
+                                <td>//Done//</td>
+                                <td></td>
+                                <td></td>
+                                                                
+                            </tr>
+                              
+                              
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+        </div>
+            
+            <!--***** Header mentoring sessions: mentor*****-->  
+            <div class="row" id="report3.1">
+            <div class="col-md-12">
+                    <div class="card text-center social-bottom sb-in">
+                        <div>Sessions where you participate as mentor: </div>
+                    </div>
+                </div>
+            </div>
+            
+               <!--***** Mentoring sessions: mentor *****-->     
+            <div class="row" id="report3">
+                <div class="col-md-12">
+                    <div class="card card-c2">
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                                <th>Topic</th>
+                                <th>Date</th>
+                                <th>Hour</th> 
+                                <th>Place</th>
+                                <th>Mentee</th> 
+                                <th>Status</th> 
+                                <th></th> 
+                                <th></th> 
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                                <td>//Physics II//</td>
+                                <td>//27/04/2018//</td>
+                                <td>//15:00//</td>
+                                <td>//Biblio//</td>
+                                <td>//Dan Elias//</td>
+                                <td>//Pending//</td>
+                                <td><a href="register-session.html" id="cancel" name="cancel" class="btn btn-default">Edit</a></td>
+                                <td><a href="" class="btn btn-default" id="delete">Cancel</a></td>
+                            </tr>
+                            <tr>
+                                <td>//Calculus II//</td>
+                                <td>//28/04/2018//</td>
+                                <td>//18:30//</td>
+                                <td>//Ruido//</td>
+                                <td>//Etan Castro//</td>
+                                <td>//Pending//</td>
+                                <td><a href="register-session.html" id="cancel" name="cancel" class="btn btn-default">Edit</a></td>
+                                <td><a href="#" class="btn btn-default" id="delete">Cancel</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>//Object Oriented Programming//</td>
+                                <td>//01/05/2018//</td>
+                                <td>//19:30//</td>
+                                <td>//Plaza Roja//</td>
+                                <td>//Ulises Almaguer//</td>
+                                <td>//Done//</td>
+                                <td></td>
+                                <td></td>
+                                                                
+                            </tr>
+                            <tr>
+                                <td>//Chemistry I//</td>
+                                <td>//25/04/2018//</td>
+                                <td>//10:00//</td>
+                                <td>//Prepa//</td>
+                                <td>//Laura Collins//</td>
+                                <td>//Done//</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                              
+                            
+
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+        </div>
+           
+                 <!--***** Header mentoring sessions: mentor*****-->  
+           
+	
+            
+</div>
+
+    <!--Global Javascript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper/popper.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/jquery.validate.min.js"></script> 
+    <script src="js/chart.min.js"></script> 
+    <script src="js/front.js"></script> 
+    <script>
+        function cancelSession() {
+                
+                alert("Are you sure you want to cancel the session?");
+                location.href ="index2.html";
+                            }
+    </script>
+    <!--Alert to delete a mentoring session -->        
+    <script>     
+            $('#delete').click(function() {
+            if (confirm('Are you sure you want to remove this mentoring session?')) {
+            // do delete item
+            }
+            }); 
+            </script>
+    
+    <!--Core Javascript -->
+    <script src="js/mychart.js"></script>
+</body>
+
+</html>

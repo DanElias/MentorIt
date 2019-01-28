@@ -1,0 +1,406 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <!--  jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
+<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+<!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+
+     <title>Mentor It // Search a Mentor!</title>
+    <link rel="shortcut icon" href="Mentorit%20logo.png">
+    
+    <!-- global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-icon-style.css">
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+
+    <!-- Core stylesheets -->
+    <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+    
+<!--====================================================
+                     MAIN NAVBAR
+======================================================-->
+   <header class="header">
+        <nav class="navbar navbar-expand-lg ">
+            <div class="search-box">
+                <button class="dismiss"><i class="icon-close"></i></button>
+                <form id="searchForm" action="#" role="search">
+                    <input type="search" placeholder="Search Now" class="form-control">
+                </form>
+            </div>
+            <div class="container-fluid ">
+                <div class="navbar-holder d-flex align-items-center justify-content-between">
+                    <div class="navbar-header">
+                        <a href="index.html" class="navbar-brand">
+                            <div class="brand-text brand-big hidden-lg-down"><img src="Mentorit%20logo%20text.png" style=height:60px alt="Logo" class="img-fluid"></div>
+                            <div class="brand-text brand-small"><img src="Mentorit%20logo.png"style=width:60px alt="Logo" class="img-fluid"></div>
+                        </a>
+                        <a id="toggle-btn" href="#" class="menu-btn active">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </a>
+                    </div>
+                </div>
+                <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                    <!-- Expand-->
+                    <li class="nav-item d-flex align-items-center full_scr_exp"><a class="nav-link" href="#"><img src="img/expand.png" onclick="toggleFullScreen(document.body)" class="img-fluid" alt=""></a></li>
+                    <!-- Search-->
+                    <li class="nav-item d-flex align-items-center"><a id="search" class="nav-link" href="#"><i class="icon-search"></i></a></li>
+                    <!-- Notifications-->
+                    <li class="nav-item dropdown"> 
+                        <a id="notifications" class="nav-link" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell-o"></i><span class="noti-numb-bg"></span><span class="badge">2</span></a>
+                        <ul aria-labelledby="notifications" class="dropdown-menu">
+                            
+                            
+                            <li>
+                                <a rel="nofollow" href="#" class="dropdown-item nav-link">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-user-circle" aria-hidden="true"></i>You have 2 sessions today</div>
+                                        <div class="notification-time"><small>4 minutes ago</small></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a rel="nofollow" href="#" class="dropdown-item nav-link">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-user-circle" aria-hidden="true"></i>New mentee request</div>
+                                        <div class="notification-time"><small>4 minutes ago</small></div>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                        
+                            <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>view all notifications                                            </strong></a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item dropdown"><a id="profile" class="nav-link logout" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="img/default-user.png" alt="..." class="img-fluid rounded-circle" style="height: 30px; width: 30px;"></a>
+                        <ul aria-labelledby="profile" class="dropdown-menu profile">
+                            <li>
+                                <a rel="nofollow" href="#" class="dropdown-item d-flex">
+                                    <div class="msg-profile"> <img src="img/default-user.png" alt="..." class="img-fluid rounded-circle"></div>
+                                    <div class="msg-body">
+                                        <h3 class="h5">//Username//</h3><span>//mail//@itesm.mx</span>
+                                    </div>
+                                </a>
+                                <hr>
+                            </li>
+                            <li>
+                                <a rel="nofollow" href="profile.html" class="dropdown-item">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-user "></i>My Profile</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a rel="nofollow" href="profile.html" class="dropdown-item">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-envelope-o"></i>Inbox</div> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a rel="nofollow" href="profile.html" class="dropdown-item">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-cog"></i>Setting</div>
+                                    </div>
+                                </a>
+                                <hr>
+                            </li>
+                            <li>
+                                <a rel="nofollow" href="profile.html" class="dropdown-item">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-power-off"></i>Logout</div>
+                                    </div>
+                                </a> 
+                            </li>
+                        </ul>
+                    </li>
+                    
+                   
+                </ul> 
+            </div>
+        </nav>
+    </header>
+
+<!--====================================================
+                    PAGE CONTENT
+======================================================-->
+    <div class="page-content d-flex align-items-stretch">
+       
+         <!--***** SIDE NAVBAR *****-->
+        <nav class="side-navbar">
+            <div class="sidebar-header d-flex align-items-center">
+                <div class="avatar"><img src="img/default-user.png" alt="..." class="img-fluid rounded-circle"></div>
+                <div class="title">
+                    <h1 class="h4">//Username//</h1>
+                </div>
+            </div>
+            <hr>
+            <!-- Sidebar Navidation Menus-->
+            <ul class="list-unstyled">
+                <li class="active"> <a href="index2.html"><i class="icon-home"></i>My Dashboard</a></li>
+                
+                
+                
+                <li><a href="#forms" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-graduation-cap" aria-hidden="true"></i>Find Mentors</a>
+                    <ul id="forms" class="collapse list-unstyled">
+                        <li><a href="search-mentors.html">Search a Mentor</a></li> 
+                        <li><a href="mentor-results.html">Browse Mentors</a></li> 
+                    </ul>
+                </li>
+                
+                <li><a href="#apps" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Apps </a>
+                    <ul id="apps" class="collapse list-unstyled">
+                        <li><a href="calendar.html">Calendar</a></li> 
+                        <li><a href="email.html">Email</a></li> 
+                    </ul>
+                </li>
+                
+                <li> <a href="maps.html"> <i class="fa fa-map-o"></i>Maps </a></li> 
+        </nav>
+
+        <div class="content-inner form-cont">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <!--***** BASIC FORM *****-->
+                    <div class="card form" id="form1">
+                        <div class="card-header">
+                            <h3 style="color: #515f68" >SEARCH A MENTOR!</h3>
+                        </div>
+                        <br>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    
+                                    <label style="color: #515f68">Select a Topic:</label>
+                                    <!--***** FILTER BUTTONS *****--> 
+                                        <div class="container">
+                                        <div class="row">    
+        <div class="col-xs-8 col-xs-offset-2">
+		    <div class="input-group">
+                <div class="input-group-btn search-panel">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="background-color: #4668d6; color: white">
+                    	<span id="search_concept" style="background-color: #4668d6; color: white">Filter by</span> <span class="caret" style="color: white"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" style="color: white">
+                        <li><a href="">Academic</a></li>
+                        <li><a href="">Personal / Life advice</a></li>
+                        <li><a href="">Sciences</a></li>
+                        <li><a href="">Physics</a></li>
+                        <li><a href="">Maths</a></li>
+                      <li class="divider"></li>
+                      <li><a href="">Anything</a></li>
+                    </ul>
+                </div>
+                <input type="hidden" name="search_param" value="all" id="search_param">         
+                <input type="text" class="form-control" name="x" placeholder="Search Topic...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" style="background-color: #4668d6"><i class="fa fa-search" aria-hidden="true" style="color: white"></i></button>
+                </span>
+            </div>
+        </div>
+	</div>
+                                        </div>
+                                     <small class="form-text text-muted">Example: Calculus II, Friendships, Programming</small>
+                                        <br>
+                                    
+                                     <label style="color: #515f68">When would you like to attend a mentoring session?</label>
+                                    <!--***** FILTER BUTTONS - Select Date *****--> 
+                                        <div class="container">
+                                        <div class="row">    
+                                            <div class="col-xs-8 col-xs-offset-2">
+                                                <div class="input-group">
+                                                   
+                                                    <input type="hidden" name="search_param" value="all" id="search_param">         
+                                                    <input type="text" class="form-control" name="x" placeholder="Select Date...">
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-default" type="button" style="background-color: #ea005d"><i class="fa fa-calendar-o" aria-hidden="true" style="color: white"></i></button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            </div>  
+                                        </div>
+                                        <br>                       
+
+                                    <label style="color: #515f68">Select the hours you are able to attend mentoring sessions:
+                                    Incluir seleccionador de horas libres como en whentomeet.com si es posible</label>
+                                    <!--***** FILTER BUTTONS - Select School Level *****--> 
+                                        <div class="container">
+                                        <div class="row">    
+                                            <div class="col-xs-8 col-xs-offset-2">
+                                                <div class="input-group">
+                                                   
+                                                    <input type="hidden" name="search_param" value="all" id="search_param">         
+                                                    <input type="text" class="form-control" name="x" placeholder="Select hour...">
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-default" type="button" style="background-color: #ffdd1e"><i class="fa fa-clock-o" aria-hidden="true" style="color: white"></i></button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            </div>  
+                                        </div>
+                                        <br>
+                                    
+                                    <label style="color: #515f68">If you know it, search for the mentor's name:</label>
+                                    <!--***** FILTER BUTTONS - Select School Level *****--> 
+                                        <div class="container">
+                                        <div class="row">    
+                                            <div class="col-xs-8 col-xs-offset-2">
+                                                <div class="input-group">
+                                                   
+                                                    <input type="hidden" name="search_param" value="all" id="search_param">         
+                                                    <input type="text" class="form-control" name="x" placeholder="Search name...">
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-default" type="button" style="background-color: #4668d6"><i class="fa fa-address-book-o" aria-hidden="true" style="color: white"></i></button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            </div>  
+                                        </div>
+                                        <br>
+                                    
+                                     <!--***** MULTIPLE SELECT *****-->
+                                    <div class="form-group">
+                                        <label style="color: #515f68">Select your prefered rating for a mentor:</label>
+                                        <select class="form-control" id="exampleSelect1">
+                                            <option>5 stars</option>
+                                            <option>3 to 5 stars</option>
+                                            <option>1 to 5 stars</option>
+                                        </select>
+                                    </div>
+                                    
+                                       
+                                </div>
+                                 <!--***** Second column *****--> 
+                                <div class="col-md-6">
+                                    
+                                        
+                                     <!--***** MULTIPLE SELECT *****-->
+                                    <div class="form-group">
+                                        <label style="color: #515f68">Select your school level:</label>
+                                        <select class="form-control" id="exampleSelect1">
+                                            <option>College</option>
+                                            <option>High School</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <!--***** MULTIPLE SELECT *****-->
+                                    <div class="form-group">
+                                        <label style="color: #515f68">Would you like a free or paid mentoring session?</label>
+                                        <select class="form-control" id="exampleSelect1">
+                                            <option>Free</option>
+                                            <option>Paid</option>
+                                            <option>Show both options in search results</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group"> 
+                                         <label style="color: #515f68">Select your prefered learning styles:</label>
+                                        <div class="col-md-6">
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox" value="" style="color: #515f68">&nbsp<i class="fa fa-binoculars" aria-hidden="true" style="color: #7c808c"></i> Visual-Spatial</label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox" value="" style="color: #515f68">&nbsp<i class="fa fa-music" aria-hidden="true" style="color: #7c808c"></i> Auditory-Musical</label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox" value="" style="color: #515f68">&nbsp<i class="fa fa-book" aria-hidden="true" style="color: #7c808c"></i> Verbal-Linguistic</label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox" value="" style="color: #515f68">&nbsp<i class="fa fa-child" aria-hidden="true" style="color: #7c808c"></i> Physical-Kinesthetic</label>
+                                                </div>
+                                                </div>
+                                        <div class="col-md-6">
+                                            <div class="checkbox">
+                                                    <label><input type="checkbox" value="" style="color: #515f68">&nbsp<i class="fa fa-bar-chart" aria-hidden="true" style="color: #7c808c"></i> Logical-Mathematical</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                    <label><input type="checkbox" value="" style="color: #515f68">&nbsp<i class="fa fa-users" aria-hidden="true" style="color: #7c808c"></i> Social-Interpersonal</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                    <label><input type="checkbox" value="" style="color: #515f68">&nbsp<i class="fa fa-user" aria-hidden="true" style="color: #7c808c"></i> Solitary-Intrapersonal</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                 </div>
+                            </div> 
+                            <button type="submit" class="btn btn-general btn-blue mr-2"><a href="mentor-results.html">Submit</a></button>  
+                            <button type="reset" class="btn btn-general btn-white">Cancel</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Global Javascript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper/popper.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/chart.min.js"></script> 
+    <script src="js/front.js"></script> 
+    
+    <!--Core Javascript -->
+    <script>
+        new Chart(document.getElementById("myChart-nav").getContext('2d'), {
+          type: 'doughnut',
+          data: {
+            labels: ["M", "T", "W", "T", "F", "S", "S"],
+            datasets: [{
+              backgroundColor: [
+                "#2ecc71",
+                "#3498db",
+                "#95a5a6",
+                "#9b59b6",
+                "#f1c40f",
+                "#e74c3c",
+                "#34495e"
+              ],
+              data: [12, 19, 3, 17, 28, 24, 7]
+            }]
+          },
+          options: {
+              legend: { display: false },
+              title: {
+                display: true,
+                text: ''
+               } 
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,550 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Mentor It</title>
+    <link rel="shortcut icon" href="Mentorit%20logo.png">
+
+    <!-- Global Stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animate/animate.min.css">
+    <link rel="stylesheet" href="css/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl-carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
+      
+  </head>
+
+  <body id="page-top">
+
+<!--====================================================
+                         HEADER
+======================================================--> 
+      
+
+    <header>
+      
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light" id="mainNav" data-toggle="affix">
+        <div class="container">
+          <a class="navbar-brand smooth-scroll" href="index.html" style="align-items: baseline; text-align: left; border: 0; padding: 0">
+            <img src="Mentorit%20logo.png" style= "width:60px;padding: 0; border: 0; align-content:"  alt="logo">
+          </a> 
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> 
+                <span class="navbar-toggler-icon"></span>
+          </button>  
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" ><a class="nav-link smooth-scroll" href="index.html">Home</a></li>
+                <!--
+                <li class="nav-item dropdown" >
+                  <a class="nav-link dropdown-toggle smooth-scroll" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a> 
+                  <div class="dropdown-menu dropdown-cust" aria-labelledby="navbarDropdownMenuLink">
+                    
+                    
+                    <a class="dropdown-item" href="careers.html">Career Oprtunity</a>
+                    <a class="dropdown-item" href="team.html">Meet Our Team</a>
+                    <a class="dropdown-item" href="faq.html">FAQ</a>
+                    <a class="dropdown-item" href="testimonials.html">Testimonials</a>
+                  </div>
+                </li>-->
+                <li class="nav-item"><a href="http://siqueiros.qro.itesm.mx/aequipo9/#/register" class="nav-link smooth-scroll" data-toggle="modal" data-target="#login-modal">Login</a></li>
+                <li class="nav-item" ><a href="http://siqueiros.qro.itesm.mx/aequipo9/#/register" class="nav-link smooth-scroll" >Register</a></li> 
+                
+
+                <li class="nav-item dropdown" >
+                  <a class="nav-link dropdown-toggle smooth-scroll" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Profile</a> 
+                  <div class="dropdown-menu dropdown-cust" aria-labelledby="navbarDropdownMenuLink"> 
+                    <a class="dropdown-item"  target="_empty" href="index2.html">Dashboard</a>
+                    <a class="dropdown-item"  target="_empty" href="search-mentors.html">Search Mentors</a>
+                    <a class="dropdown-item"  target="_empty" href="mentor-results.html">Browse Mentors</a> 
+                    <a class="dropdown-item"  target="_empty" href="email.html">Email</a> 
+                    <a class="dropdown-item"  target="_empty" href="profile.html">Profile</a> 
+               
+                  </div>
+                </li>
+               
+                
+                <li>
+                  <i class="search fa fa-search search-btn"></i>
+                  <div class="search-open">
+                    <div class="input-group animated fadeInUp">
+                      <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon2">
+                      <span class="input-group-addon" id="basic-addon2">Go</span>
+                    </div>
+                  </div>
+                </li> 
+                
+            </ul>  
+          </div>
+        </div>
+      </nav>
+    </header> 
+
+<!--====================================================
+                    LOGIN OR REGISTER
+======================================================-->
+    <section id="login">
+      <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header" align="center">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span class="fa fa-times" aria-hidden="true"></span>
+                      </button>
+                  </div>
+                  <div id="div-forms">
+                      <form id="login-form">
+                          <h3 class="text-center">Login</h3>
+                          <div class="modal-body">
+                              <label for="username">Username</label> 
+                              <input id="login_username" class="form-control" type="text" placeholder="Enter username " required>
+                              <label for="username">Password</label> 
+                              <input id="login_password" class="form-control" type="password" placeholder="Enter password" required>
+                              <div class="checkbox">
+                                  <label>
+                                      <input type="checkbox"> Remember me
+                                  </label>
+                              </div>
+                          </div>
+                          <div class="modal-footer text-center">
+                              <div>
+                                  <button type="submit" class="btn btn-general btn-white">Login</button>
+                              </div>
+                              <div>
+                                  <button id="login_register_btn" type="button" class="btn btn-link">Register</button>
+                              </div>
+                          </div>
+                      </form>
+                      <form id="register-form" style="display:none;">
+                          <h3 class="text-center">Register</h3>
+                          <div class="modal-body"> 
+                              <label for="username">Username</label> 
+                              <input id="register_username" class="form-control" type="text" placeholder="Enter username" required>
+                              <label for="register_email">E-mailId</label> 
+                              <input id="register_email" class="form-control" type="text" placeholder="Enter eMail" required>
+                              <label for="register_password">Password</label> 
+                              <input id="register_password" class="form-control" type="password" placeholder="Password" required>
+                          </div>
+                          <div class="modal-footer">
+                              <div>
+                                  <button type="submit" class="btn btn-general btn-white">Register</button>
+                              </div>
+                              <div>
+                                  <button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section> 
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<!--===================================================
+               MENTOR IT PARALLAX HOME
+======================================================-->
+      <div id="mentorit"> MENTOR IT </div>
+      
+      <div id="mentorit2"> FOR STUDENTS, BY STUDENTS</div>
+      
+      <div class="text-center"> 
+   
+    
+        
+    
+      </div>
+
+<div class="parallax"></div>
+    <div id="layer1">
+    </div>
+    
+    <div id="layer2">
+    </div>
+    
+    <div id="layer3">
+    </div>
+    
+    <div id="layer4">
+    </div>
+    
+    <div id="layer5">
+    </div>
+    
+    <div id="layer6">
+    </div>
+<div class="parallax"></div>
+      
+<!--PARALLAX SCRIPT - EFFECT ANIMATION-->
+<script>
+    
+// Create cross browser requestAnimationFrame method:
+window.requestAnimationFrame = window.requestAnimationFrame
+ || window.mozRequestAnimationFrame
+ || window.webkitRequestAnimationFrame
+ || window.msRequestAnimationFrame
+ || function(f){setTimeout(f, 1000/60)}
+ 
+var layer1 = document.getElementById('layer1')
+var layer2 = document.getElementById('layer2')
+var layer3 = document.getElementById('layer3')
+var layer4 = document.getElementById('layer4')
+var layer5 = document.getElementById('layer5')
+var layer6 = document.getElementById('layer6')
+ 
+function parallaxlayers(){
+    var scrolltop = window.pageYOffset // get number of pixels document has scrolled vertically 
+    layer1.style.top = -scrolltop * .1 + 'px' // move bubble1 at 20% of scroll rate
+    layer2.style.top = -scrolltop * .2 + 'px' // move bubble2 at 50% of scroll rate
+    layer3.style.top = -scrolltop * .3 + 'px' // move bubble2 at 50% of scroll rate
+    layer4.style.top = scrolltop * .3 + 'px' // move bubble2 at 50% of scroll rate
+    layer5.style.top = scrolltop * .2 + 'px' // move bubble2 at 50% of scroll rate
+    layer6.style.top = scrolltop * .1 + 'px' // move bubble2 at 50% of scroll rate
+}
+ 
+window.addEventListener('scroll', function(){ // on page scroll
+ requestAnimationFrame(parallaxlayers) // call parallaxbubbles() on next available screen paint
+}, false)
+ 
+</script>
+
+
+
+
+<!--====================================================
+                        ABOUT
+======================================================-->
+    <section id="about" class="about">
+      
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br>
+        
+      <!-- About right side withBG parallax -->
+      <div class="container-fluid">
+        <div class="row"> 
+          <div class="col-md-4 bg-matisse">
+            <div class="about-content-box wow fadeInUp" data-wow-delay="0.3s">
+              <i class="fa fa-user-circle"></i>
+              <h5 style="font-family: BebasNeue" style="font-size: 140px">1</h5>
+              <p  class="pointer"><a data-toggle="modal" data-target="#login-modal">Create and account</a></p>
+            </div>
+          </div> 
+            
+          <div class="col-md-4 bg-chathams">
+            <div class="about-content-box wow fadeInUp" data-wow-delay="0.5s">
+              <i class="fa fa-id-card-o"></i>
+              <h5 style="font-family: BebasNeue" style="font-size: 140px">2</h5>
+              <p class="desc">Find a mentor.</p>
+            </div>
+          </div> 
+          <div class="col-md-4 bg-matisse">
+            <div class="about-content-box wow fadeInUp" data-wow-delay="0.7s">
+              <i class="fa fa-handshake-o"></i>
+              <h5 style="font-family: BebasNeue" style="font-size: 140px">3</h5>
+              <p class="desc">Improve your life and knowledge.</p>
+            </div>
+          </div> 
+        </div> 
+      </div>       
+    </section> 
+
+<!--====================================================
+                     WHAT WE DO
+======================================================-->
+    <section class="what-we-do bg-gradiant2">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3">
+            <h3  style="color: white"><a class="pointer" target="_blank" href="http://www.educationplanner.org/students/self-assessments/learning-styles-quiz.shtml"  >KNOW YOUR LEARNING STYLE</a></h3>
+            <div class="heading-border-light"></div> 
+            
+          </div>
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-md-4  col-sm-6">
+                <div class="what-we-desc">
+                  <i class="fa fa-eye" aria-hidden="true" style="color: white"></i>
+                  <h6>Visual-Spatial</h6>
+                  <p class="desc">You prefer using pictures, images, and spatial understanding. </p>
+                </div>
+              </div>
+              <div class="col-md-4  col-sm-6">
+                <div class="what-we-desc">
+                  <i class="fa fa-music" aria-hidden="true" style="color: white"></i>
+                  <h6>Auditory-Musical</h6>
+                  <p class="desc">You prefer using sound and music. </p>
+                </div>
+              </div>
+              <div class="col-md-4  col-sm-6">
+                <div class="what-we-desc">
+                  <i class="fa fa-book" aria-hidden="true" style="color: white"></i>
+                  <h6>Verbal-Linguistic</h6>
+                  <p class="desc">You prefer using words, both in speech and writing. </p>
+                </div>
+              </div>
+              <div class="col-md-4  col-sm-6">
+                <div class="what-we-desc">
+                  <i class="fa fa-child" aria-hidden="true" style="color: white"></i>
+                  <h6>Physical-Kinesthetic</h6>
+                  <p class="desc">You prefer using your body, hands and sense of touch. </p>
+                </div>
+              </div>
+              <div class="col-md-4  col-sm-6">
+                <div class="what-we-desc">
+                  <i class="fa fa-bar-chart" aria-hidden="true" style="color: white"></i>
+                  <h6>Logical-Mathematical</h6>
+                  <p class="desc">You prefer using logic, reasoning and systems. </p>
+                </div>
+              </div>
+              <div class="col-md-4  col-sm-6">
+                <div class="what-we-desc">
+                  <i class="fa fa-users" aria-hidden="true" style="color: white"></i>
+                  <h6>Social vs. Solitary</h6>
+                  <p class="desc">Do you prefer learning in groups or working alone and using self-study? </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>      
+    </section> 
+
+<!--====================================================
+                  COMPANY THOUGHT
+======================================================-->
+    <div class="overlay-thought"></div>
+    <section id="thought" class="bg-parallax thought-bg">
+      <div class="container">
+        <div id="thought-desc" class="row title-bar title-bar-thought owl-carousel owl-theme">
+          <div class="col-md-12 ">
+            <div class="heading-border bg-white"></div>
+            <p class="wow fadeInUp" data-wow-delay="0.4s" style="font-size: 20px">Mentor It is the best way to connect with mentors, you only need to search for your topic of interest, prefered rating, learning styles, choose a date, hour and place and finally pay your mentor. Then you are ready for an opportunity to learn something new!</p>
+            
+          </div>
+          <div class="col-md-12 thought-desc">
+            <div class="heading-border bg-white"></div>
+            <p class="wow fadeInUp" data-wow-delay="0.4s" style="font-size: 20px">You can be either a mentor or a mentee. To be a mentor you only need to post a mentoring opportunity and your grades, diplomas or any other document that certifies you are proficient in a topic. Just like that you are able to help other students and even earn a little extra money for it! </p>
+            
+          </div>
+        </div>
+      </div>         
+    </section> 
+      </div>
+<!--====================================================
+                   SERVICE-HOME
+======================================================--> 
+    <section id="service-h">
+        <div class="container-fluid bg-gradiant2">
+          <div class="row" >
+            <div class="col-md-6" >
+              <div class="service-himg" > 
+                <iframe src="https://www.youtube.com/embed/JAn6Vmpcvl0?rel=0&showinfo=0;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+            <div class="col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+              <div class="service-h-desc">
+                <h3 style="color: white">How it works</h3>
+                <div class="heading-border-light"></div> 
+                <p style="color: white">Every user can be a Mentor or Mentee. Mentors are students who teach or give advice on certain topics and Mentees are the students who attend this sessions.</p>  
+              <div class="service-h-tab"> 
+                <nav class="nav nav-tabs" id="myTab" role="tablist">
+                  <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true" style="color: white">Joining</a>
+                  <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" style="color: white">Mentees</a> 
+                  <a class="nav-item nav-link" id="my-profile-tab" data-toggle="tab" href="#my-profile" role="tab" aria-controls="my-profile" style="color: white">Mentors</a> 
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"><p style="color: white">To Join you only need to register and then access your dashboard that we refer to as MyDashboard. Then you are able to search for mentoring opportunities or post a mentoring </p></div>
+                  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    <p style="color: white">After login in or registering you are able to access your Dashboard in the top bar of the main menu by clicking on My Profile. <br><br> Then in you Dashboard you are able to search for an specific mentor depending on your selected preferences that consist on: topic, date, hour, costs, rating, school level and learning style. We take care of the rest. <br><br> We will create matches with different mentors and you can choose the one that best suits your needs. Or you can calso browse all the mentors registered in our site. <br> <br> Finally you can register for a session and wait until the date and hour arrive to learn something new!</p>
+                  </div> 
+                  <div class="tab-pane fade" id="my-profile" role="tabpanel" aria-labelledby="my-profile-tab">
+                    <p style="color: white">Be the difference! You can register a mentoring session where you take the role of being the one who helps other students understand or give advice on a certain topic. <br><br> To do this you simply need to click on Post Mentoring, then fill our the required information such as: topic, available hours, dates, semester, cost and a document such as grades or diploma that certifies you are proficient on a certain topic. <br><br> Finally you can post the mentoring and wait till a mentee sends you a request to receive a session. <br><br> Get ready to help others and even receive a monetary reward for it! </p>
+                  </div> 
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>  
+    </section>
+
+<!--====================================================
+                      CLIENT
+======================================================-->
+    <section id="client" class="client">
+      <div class="container">
+        <div class="row title-bar">
+          <div class="col-md-12">
+            <h1 class="wow fadeInUp">Our Users Say</h1>
+            <div class="heading-border"></div>
+            <p class="wow fadeInUp" data-wow-delay="0.4s">Mentor it was made by students to help other students.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <div class="client-cont wow fadeInUp" data-wow-delay="0.1s">
+              <img src="mon.png" class="img-fluid" alt="">
+              <h5>Montse P.</h5>
+              <h6>Mentee</h6>
+              <i class="fa fa-quote-left"></i>
+              <p>Mentor It has helped me increase my grade average and I couldn´t be happier!</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="client-cont wow fadeInUp" data-wow-delay="0.3s">
+              <img src="cesar.png" class="img-fluid" alt="">
+              <h5>Cesar V.</h5>
+              <h6>Mentor</h6>
+              <i class="fa fa-quote-left"></i>
+              <p>I enjoy helping my classmates and Mentor It is just the right tool that helps me achieve that.</p>
+            </div>
+          </div>
+        </div>
+        <br> <br>
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <div class="client-cont wow fadeInUp" data-wow-delay="0.1s">
+              <img src="adolf.png" class="img-fluid" alt="">
+              <h5>Adolfo G.</h5>
+              <h6>Mentor</h6>
+              <i class="fa fa-quote-left"></i>
+              <p>Mentor It is the best way for me to earn extra money, review topics and help my classmates!</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="client-cont wow fadeInUp" data-wow-delay="0.3s">
+              <img src="caro.png" class="img-fluid" alt="">
+              <h5>Caro V.</h5>
+              <h6>Mentee</h6>
+              <i class="fa fa-quote-left"></i>
+              <p>Without it I wouldn't be able to fully understand topics and be a better student.</p>
+            </div>
+          </div>
+        </div>
+      </div>        
+    </section>  
+
+<!--====================================================
+                    CONTACT HOME
+======================================================-->
+    <div class="overlay-contact-h"></div>
+    <section id="contact-h" class="bg-parallax contact-h-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="contact-h-cont">
+              <h3 class="cl-white">Continue The Conversation</h3><br>
+              <form>
+                <div class="form-group cl-white">
+                  <label for="name">Your Name</label>
+                  <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter name"> 
+                </div>  
+                <div class="form-group cl-white">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"> 
+                </div>  
+                <div class="form-group cl-white">
+                  <label for="subject">Subject</label>
+                  <input type="text" class="form-control" id="subject" aria-describedby="subjectHelp" placeholder="Enter subject"> 
+                </div>  
+                <div class="form-group cl-white">
+                  <label for="message">Message</label>
+                  <textarea class="form-control" id="message" rows="3"></textarea>
+                </div>  
+                <button class="btn btn-general btn-white" role="button"><i fa fa-right-arrow></i>GET CONVERSATION</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>         
+    </section> 
+
+<!--====================================================
+                      FOOTER
+======================================================--> 
+    <footer> 
+        <div id="footer-s1" class="footer-s1">
+          <div class="footer">
+            <div class="container">
+              <div class="row">
+                <!-- About Us -->
+                <div class="col-md-3 col-sm-6 ">
+                  <div><img src="Mentorit%20logo%20text.png" alt="" class="img-fluid"></div>
+                  <ul class="list-unstyled comp-desc-f">
+                     <li><p> For students, by students </p></li> 
+                  </ul><br> 
+                </div>
+                <!-- End About Us -->
+
+                <!-- Recent News -->
+                <div class="col-md-3 col-sm-6 ">
+                  <div class="heading-footer"><h2>Useful Links</h2></div>
+                  <ul class="list-unstyled link-list">
+                    <li><a href="about.html">About us</a><i class="fa fa-angle-right"></i></li> 
+                    <li><a href="faq.html">FAQ</a><i class="fa fa-angle-right"></i></li> 
+                    <li><a href="contact.html">Contact us</a><i class="fa fa-angle-right"></i></li> 
+                  </ul>
+                </div>
+                <!-- End Recent list -->
+
+               
+
+                <!-- Latest Tweets -->
+                <div class="col-md-3 col-sm-6">
+                  <div class="heading-footer"><h2>Get In Touch</h2></div>
+                  <address class="address-details-f">
+                    Phone: 800 123 3456 <br>
+                    Fax: 800 123 3456 <br>
+                    Email: <a href="mailto:info@Businessbox.com" class="">info@mentorit.com</a>
+                  </address>  
+                  <ul class="list-inline social-icon-f top-data">
+                    <li><a href="#" target="_empty"><i class="fa top-social fa-facebook"></i></a></li>
+                    <li><a href="#" target="_empty"><i class="fa top-social fa-twitter"></i></a></li>
+                    <li><a href="#" target="_empty"><i class="fa top-social fa-google-plus"></i></a></li> 
+                  </ul>
+                </div>
+                <!-- End Latest Tweets -->
+              </div>
+            </div><!--/container -->
+          </div> 
+        </div>
+
+        <div id="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="footer-copyrights">
+                            <p>Copyrights &copy; 2018 All Rights Reserved by Mentor It - Indigo Design. This website is only a college project, no copyright infrengement intended&nbsp; <a href="#">Privacy Policy</a> <a href="#">Terms of Services</a></p>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <a href="#home" id="back-to-top" class="btn btn-sm btn-green btn-back-to-top smooth-scrolls hidden-sm hidden-xs" title="home" role="button">
+            <i class="fa fa-angle-up"></i>
+        </a>
+    </footer>
+
+    <!--Global JavaScript -->
+    <script src="js/jquery/jquery.min.js"></script>
+    <script src="js/popper/popper.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/wow/wow.min.js"></script>
+    <script src="js/owl-carousel/owl.carousel.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery-easing/jquery.easing.min.js"></script> 
+    <script src="js/custom.js"></script> 
+  </body>
+
+</html>
